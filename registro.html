@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/pageStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/registro.css">
+    <title>Florecer - Registro</title>
+</head>
+<header class="header headersh">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid ">
+            <a class="" href="#"> <img src="../pagina js/img/logo.png" class="header__logo" alt="logo"> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link active mainNav mt-1 mx-3" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link mainNav mt-1 mx-3" href="#">Nosotros</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle mt-1 mx-3" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
+                        </a>
+                        <div id="carrito" class="dropdown-menu" style="width: 350px;" aria-labelledby="navbarCollapse">
+                            <table id="lista-carrito" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <div class="text-center">
+                                <a href="#" id="vaciar-carrito" class="btn btn-primary button">Vaciar Carrito</a>
+                                <a href="#" id="procesar-pedido" class="btn btn-danger button">Procesar Compra</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mt-1 mx-3 mainNav header__button" href="registro.html">Registrarse</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="header__backgroundsh">
+        <article class="header__titlebox">
+            <h1 class="header__title h1nav">REGISTRESE !</h1>
+        </article>
+    </div>
+</header>
+    <main>
+
+        <section class="login" id="loginReg" style="display: block;">
+            <div class="login__txt">
+                <h5 class="mainH5">Cree una nueva cuenta e inicie sesión para comprar boletos.</h5>
+            </div>
+            <div class="login__form">
+                <form action="" >
+                    <label for="name">Nombre: </label>
+                    <input type="text" id="name" required>
+                    <label for="lastname">Apellido: </label>
+                    <input type="text" id="lastname" required>
+                    <label for="mail">Correo electrónico: </label>
+                    <input type="email" pattern="[^ @]*@[^ @]*" id="mail" required>
+                    <label for="password">Contraseña: </label>
+                    <input type="password" id="password" required minlength="6" maxlength="6">
+                    <article class="login__but">
+                        <button class="loginbutton button" type="submit" id="btnReg">ENVIAR</button>
+                        <button class="loginbutton button" type="reset">BORRAR</button>
+                    </article>
+                </form>
+            </div>
+        </section>
+        <div class="legendRegbox" id="legendReg" style="display: none;">
+            <a class="iconCloseReg" onclick="location.reload()"><i class="fa fa-window-close fa-2x" aria-hidden="true"></i></a>
+            <h3 class="login__legend mainH3" id="usuReg">texto</h3>
+        </div>
+    
+
+    </main>
+    <footer class="footer">
+        <article class="footer__logo"> 
+            <img class="footer__logo footer__logo--img" src="../pagina js/img/logobco.png" alt="logo">  
+        </article>
+        <div class="footer__box">
+            <article class="footer__txt">
+                <ul>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i>    +54 11 4333 9287</li>
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i> info@florecer.com</li>
+                    <li><i class="fa fa-address-card" aria-hidden="true"></i> Cerrito 1430 - Caba</li>
+                </ul>
+            </article>
+            <article class="footer__link">
+                <ul>
+                    <li><a href="">¿Cómo comprar tu ramo?</a></li>
+                    <li><a href="">¿Cómo retirarlo? </a> </li>
+                    <li><a href="">Tiempo de producción</a></li>
+                </ul>
+            </article>
+            <article class="footer__form">
+                <article>
+                    <form  action="">
+                        <label for="mail">Suscribite a nuestro Newsletter: </label>
+                        <br>
+                        <input type="email" name="mail" id="">
+                        <input class="footer__submit" type="submit" value="Enviar"> 
+                    </form>
+                </article>    
+                <article class="footer__social"> 
+                    <ul>
+                        <li><a href="https://facebook.com" target="_blank" class="facebook"> <i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://twitter.com" target="_blank" class="twitter"> <i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="https://instagram.com" target="_blank" class="instagram"> <i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="https://youtube.com" target="_blank" class="youtube"> <i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                    </ul>
+                </article>
+            </article>
+        </div>
+    </footer>
+
+    <script src="js/sweetalert2.min.js"></script>
+</body>
+
+</html>
