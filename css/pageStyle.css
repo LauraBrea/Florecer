@@ -61,14 +61,6 @@ a:active {
   border-color: #d08286;
   transition: 2s; }
 
-tr th {
-  font-size: 0.9rem;
-  font-weight: 400;
-  line-height: 1.75rem;
-  font-family: 'Montserrat', sans-serif;
-  color: black; }
-
-
 table {
   width: 100%;
   font-size: 0.9rem;
@@ -77,11 +69,17 @@ table {
   font-family: 'Montserrat', sans-serif;
   color: black;
   border-collapse: collapse;
+  text-align: center;
   border-spacing: 0; }
 
-table th {
+table tr th {
   font-weight: 600;
-}
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+  font-family: 'Montserrat', sans-serif;
+  vertical-align: middle;
+  color: black; }
 
 table tr td {
   border: 1px;
@@ -89,6 +87,7 @@ table tr td {
   border-top: none;
   border-left: none;
   border-right: none;
+  vertical-align: middle;
   border-color: rgba(167, 166, 166, 0.563); }
 
 /*
@@ -502,22 +501,27 @@ input[type=number] {
     padding: 15px 50px 15px 50px;
     margin-bottom: 20px;
   }  
-
-
+  
+  .btncomprar:hover {
+    color: white;
+    border-color:  #d08286;
+    background-color: #d08286;
+    transition: 2s;
+  }  
 
   .car__icon {
-    color: black;
+    color: white;
+    background-color: black;
     border: none;
-    background: none;
+    border-radius: 50%;
     width: 25px;
     height: 25px;
-    margin: 0;
-    padding: 0; }  
+  }  
 
-    .form__compra {
-      font-size: 1.1rem;
-      font-family: 'Montserrat', sans-serif;
-      color: black; }
+  .form__compra {
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+    color: black; }
 
 
 

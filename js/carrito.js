@@ -48,17 +48,16 @@ class Carrito {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>
-                <img src="${producto.imagen}" width=100>
+                <img src="${producto.imagen}" width=75>
             </td>
             <td>${producto.titulo}</td>
             <td>$ ${producto.precio}</td>
             <td>
-                <button href="#" class="borrar-producto car__icon fa fa-times fa-lg" data-id="${producto.id}"></button>
+                <button href="#" class="borrar-producto car__icon" data-id="${producto.id}"> X </button>
             </td>
         `;
         listaProductos.appendChild(row);
         this.guardarProductosLocalStorage(producto);
-
     }
 
     //Eliminar el producto del carrito en el DOM
@@ -72,7 +71,6 @@ class Carrito {
         }
         this.eliminarProductoLocalStorage(productoID);
         this.calcularTotal();
-
     }
 
     //Elimina todos los productos
@@ -82,7 +80,6 @@ class Carrito {
             listaProductos.removeChild(listaProductos.firstChild);
         }
         this.vaciarLocalStorage();
-
         return false;
     }
 
@@ -120,12 +117,12 @@ class Carrito {
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>
-                    <img src="${producto.imagen}" width=100>
+                    <img src="${producto.imagen}" width=75>
                 </td>
                 <td>${producto.titulo}</td>
-                <td>${producto.precio}</td>
+                <td>$ ${producto.precio}</td>
                 <td>
-                    <a href="#" class="borrar-producto fas fa-times-circle" data-id="${producto.id}"></a>
+                    <button href="#" class="borrar-producto car__icon" data-id="${producto.id}"> X </button>
                 </td>
             `;
             listaProductos.appendChild(row);
@@ -149,7 +146,7 @@ class Carrito {
                 </td>
                 <td id='subtotales'>$ ${producto.precio * producto.cantidad}</td>
                 <td>
-                    <a href="#" class="borrar-producto fas fa-times-circle" style="font-size:30px" data-id="${producto.id}"></a>
+                    <button href="#" class="borrar-producto car__icon" data-id="${producto.id}"> X </button>
                 </td>
             `;
             listaCompra.appendChild(row);
@@ -185,7 +182,7 @@ class Carrito {
             Swal.fire({
                 type: 'warning',
                 title: 'Oops...',
-                text: 'El carrito está vacío, agrega algún producto',
+                text: 'El carrito está vacío, agregue algún producto',
                 showConfirmButton: false,
                 timer: 3000
             })
@@ -203,7 +200,6 @@ class Carrito {
         for(let i = 0; i < productosLS.length; i++){
             let element = Number(productosLS[i].precio * productosLS[i].cantidad);
             subtotal += element;
-            
         }
         
         igv = parseFloat(subtotal * 0.21).toFixed(2);
@@ -230,7 +226,6 @@ class Carrito {
                 }    
             });
             localStorage.setItem('productos', JSON.stringify(productosLS));
-            
         }
         else {
             console.log("click afuera");
