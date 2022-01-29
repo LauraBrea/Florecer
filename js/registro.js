@@ -2,7 +2,6 @@
 const callUser = () => localStorage.getItem("dataBaseUser") === null ? [] : JSON.parse(localStorage.getItem("dataBaseUser"));
 const saveUser = (newUser) => localStorage.setItem("dataBaseUser", JSON.stringify(newUser));
 
-
 $( document ).ready(function() {
 
     const APIURL = 'https://jsonplaceholder.typicode.com/posts';
@@ -21,6 +20,7 @@ $( document ).ready(function() {
                 password: datpassword,
             };
 
+            //Se agrego al storage para darle alguna utilidad a futuro
             const newUser = callUser();
             newUser.push(user);
             saveUser(newUser);
@@ -42,5 +42,4 @@ $( document ).ready(function() {
                 }
             });  
         }); 
-
 });

@@ -9,18 +9,18 @@ cargarEventos();
 
 function cargarEventos(){
 
-    //Se ejecuta cuando se presionar agregar carrito
+    //Se agrega producto carrito (index)
     productos.addEventListener('click', (e)=>{carro.comprarProducto(e)});
 
-    //Cuando se elimina productos del carrito
+    //Elimina producto del carrito (index)
     carrito.addEventListener('click', (e)=>{carro.eliminarProducto(e)});
 
-    //Al vaciar carrito
+    //Vacia carrito
     vaciarCarritoBtn.addEventListener('click', (e)=>{carro.vaciarCarrito(e)});
 
-    //Al cargar documento se muestra lo almacenado en LS
+    //Lee el LS
     document.addEventListener('DOMContentLoaded', carro.leerLocalStorage());
 
-    //Enviar pedido a otra pagina
+    //Redirige a pag Carrito
     procesarPedidoBtn.addEventListener('click', (e)=>{carro.procesarPedido(e)});
 }

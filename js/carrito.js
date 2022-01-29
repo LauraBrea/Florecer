@@ -1,17 +1,16 @@
 class Carrito {
 
-    //Añadir producto al carrito
+    //Agrega producto al carrito
     comprarProducto(e){
         e.preventDefault();
-        //Delegado para agregar al carrito
+
         if(e.target.classList.contains('agregar-carrito')){
             const producto = e.target.parentElement.parentElement;
-            //Enviamos el producto seleccionado para tomar sus datos
             this.leerDatosProducto(producto);
         }
     }
 
-    //Leer datos del producto
+    //Leyendo datos del producto
     leerDatosProducto(producto){
         const infoProducto = {
             imagen : producto.querySelector('img').src,
@@ -38,11 +37,18 @@ class Carrito {
             })
         }
         else {
+                Swal.fire({
+                    type: 'success',
+                    title: 'Ok',
+                    text: 'Se agregó al carrito',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
             this.insertarCarrito(infoProducto);
         }
     }
 
-    //muestra producto seleccionado en carrito
+    //Muestra producto en carrito (pag index)
     insertarCarrito(producto){
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -59,7 +65,7 @@ class Carrito {
         this.guardarProductosLocalStorage(producto);
     }
 
-    //Eliminar el producto del carrito en el DOM
+    //Elimina producto del carrito (pag index)
     eliminarProducto(e){
         e.preventDefault();
         let producto, productoID;
@@ -82,22 +88,19 @@ class Carrito {
         return false;
     }
 
-    //Almacenar en el LS
+    //Guarda compra en el Local storage
     guardarProductosLocalStorage(producto){
         let productos;
-        //Toma valor de un arreglo con datos del LS
+
         productos = this.obtenerProductosLocalStorage();
-        //Agregar el producto al carrito
         productos.push(producto);
-        //Agregamos al LS
         localStorage.setItem('productos', JSON.stringify(productos));
     }
 
-    //Comprobar que hay elementos en el LS
+    //Comprobar si no hay elementos repetidos Local storage
     obtenerProductosLocalStorage(){
         let productoLS;
 
-        //Comprobar si hay algo en LS
         if(localStorage.getItem('productos') === null){
             productoLS = [];
         }
@@ -107,12 +110,12 @@ class Carrito {
         return productoLS;
     }
 
-    //Mostrar los productos guardados en el LS
+    //Mostrar productos guardados en el Local Storage (pag index)
     leerLocalStorage(){
         let productosLS;
         productosLS = this.obtenerProductosLocalStorage();
         productosLS.forEach(function (producto){
-            //Construir plantilla
+
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>
@@ -128,7 +131,7 @@ class Carrito {
         });
     }
 
-    //Mostrar los productos guardados en el LS en compra.html
+    //Renderiza carrito (pag compra.html)
     leerLocalStorageCompra(){
         let productosLS;
         productosLS = this.obtenerProductosLocalStorage();
@@ -145,35 +148,33 @@ class Carrito {
                 </td>
                 <td id='subtotales'>$ ${producto.precio * producto.cantidad}</td>
                 <td>
-                <a href="#" class="borrar-producto car__icon"  data-id="${producto.id}"> x </a>
+                <a href="#" class="borrar-producto buttondelet"  data-id="${producto.id}"> X </a>
                 </td>
             `;
             listaCompra.appendChild(row);
         });
     }
 
-    //Eliminar producto por ID del LS
+    //Elimina producto del Local storage (pag compra.html)
     eliminarProductoLocalStorage(productoID){
         let productosLS;
-        //Obtenemos el arreglo de productos
+
         productosLS = this.obtenerProductosLocalStorage();
-        //Comparar el id del producto borrado con LS
         productosLS.forEach(function(productoLS, index){
             if(productoLS.id === productoID){
                 productosLS.splice(index, 1);
             }
         });
 
-        //Añadimos el arreglo actual al LS
         localStorage.setItem('productos', JSON.stringify(productosLS));
     }
 
-    //Eliminar todos los datos del LS
+    //Vaciar local storage
     vaciarLocalStorage(){
         localStorage.clear();
     }
 
-    //Procesar pedido
+    //Procesa compra y redirecciona a pag carrito (compra.html)
     procesarPedido(e){
         e.preventDefault();
 
@@ -191,7 +192,7 @@ class Carrito {
         }
     }
 
-    //Calcular montos
+    //Calcula importes finales
     calcularTotal(){
         let productosLS;
         let total = 0, igv = 0, subtotal = 0;

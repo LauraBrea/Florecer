@@ -509,15 +509,24 @@ input[type=number] {
   transition: 2s;
 }  
 
+.buttondelet {
+  color: white;
+  background-color: black;
+  border-width: 1px;
+  border-radius: 15px;
+  cursor: pointer;
+  text-align: center;
+  padding: 5px 10px 5px 10px;
+  z-index: 3;}
+
 .car__icon {
   color: white;
   border: none;
   background-color: black;
-  border-radius: 12px;
-  width: 25px;
-  height: 25px;
-  margin: 5px;
-}  
+  border-radius: 11px;
+  width: 22px;
+  height: 22px;
+  margin: 5px; }  
 
 .form__compra {
   font-size: 1.1rem;
