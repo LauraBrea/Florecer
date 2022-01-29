@@ -228,7 +228,7 @@ class Carrito {
             localStorage.setItem('productos', JSON.stringify(productosLS));
         }
         else {
-            console.log("click afuera");
+            console.log("..");
         }
     }
 }
