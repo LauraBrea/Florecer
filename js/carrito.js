@@ -30,17 +30,16 @@ class Carrito {
 
         if(productosLS === infoProducto.id){
             Swal.fire({
-                type: 'success',
+                type: 'info',
                 title: 'Oops...',
                 text: 'El producto ya está agregado',
                 showConfirmButton: false,
-                timer: 3000
+                timer: 2000
             })
         }
         else {
             this.insertarCarrito(infoProducto);
         }
-        
     }
 
     //muestra producto seleccionado en carrito
@@ -146,7 +145,7 @@ class Carrito {
                 </td>
                 <td id='subtotales'>$ ${producto.precio * producto.cantidad}</td>
                 <td>
-                    <button href="#" class="borrar-producto car__icon" data-id="${producto.id}"> X </button>
+                <a href="#" class="borrar-producto car__icon"  data-id="${producto.id}"> x </a>
                 </td>
             `;
             listaCompra.appendChild(row);

@@ -485,43 +485,44 @@ input[type=number] {
 
 
 
-  .btncomprar {
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 400;
-    letter-spacing: 3px;
-    border-color:  #899866e3;
-    background-color: #899866e3;
-    border-width: 1px;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    z-index: 3;
-    padding: 15px 50px 15px 50px;
-    margin-bottom: 20px;
-  }  
-  
-  .btncomprar:hover {
-    color: white;
-    border-color:  #d08286;
-    background-color: #d08286;
-    transition: 2s;
-  }  
+.btncomprar {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+  border-color:  #899866e3;
+  background-color: #899866e3;
+  border-width: 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  z-index: 3;
+  padding: 15px 50px 15px 50px;
+  margin-bottom: 20px;
+}  
 
-  .car__icon {
-    color: white;
-    background-color: black;
-    border: none;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-  }  
+.btncomprar:hover {
+  color: white;
+  border-color:  #d08286;
+  background-color: #d08286;
+  transition: 2s;
+}  
 
-  .form__compra {
-    font-size: 1.1rem;
-    font-family: 'Montserrat', sans-serif;
-    color: black; }
+.car__icon {
+  color: white;
+  border: none;
+  background-color: black;
+  border-radius: 12px;
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+}  
+
+.form__compra {
+  font-size: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  color: black; }
 
 
 
